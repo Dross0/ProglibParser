@@ -10,7 +10,7 @@ themes = {'C#': 'csharp',
           'Java': 'java',
           'Linux': 'linux',
           'Mobile': 'mobile',
-          'Python': 'pytnon',
+          'Python': 'python',
           'Web': 'web',
           'Algoritms': 'algoritms',
           'Beginner': 'novice',
@@ -89,16 +89,10 @@ def get_description_list(articles):
 def write_csv(titles, links, descriptions):
     with open('articles.csv', 'a', newline='') as csvfile:
         writer = csv.writer(csvfile)
-        row = ['',user_input.upper(), '']
-        writer.writerow(row)
-        row = ['Заголовок', 'Описание', 'Ссылка']
-        writer.writerow(row)
+        writer.writerow(['',user_input.upper(), ''])
+        writer.writerow(['Заголовок', 'Описание', 'Ссылка'])
         for article in range(len(titles)):
-            row = []
-            row.append(str(titles[article]))
-            row.append(str(descriptions[article]))
-            row.append(str(links[article]))
-            writer.writerow(row)
+            writer.writerow([str(titles[article]), str(descriptions[article]), str(links[article])])
 
 
 
